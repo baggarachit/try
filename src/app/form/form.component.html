@@ -1,0 +1,43 @@
+<body>
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+    <label>
+        Name:
+        <input type="text" formControlName="name">
+    </label>
+    <br>
+    <label>
+        Email:
+        <input type="text" formControlName="email">
+    </label>
+    <br>
+    <div class="ab">
+    <p>Feedback:</p>
+    </div>
+    <br>
+    <div class="abc">
+    <label class="ab">
+        Great
+        <input type="radio" value="Great" formControlName="feedback">
+    </label>
+    <br>
+    <label class="ab">
+        Okay
+        <input type="radio" value="Okay" formControlName="feedback">
+    </label>
+    <br>
+    <label class="ab">
+        Not Good
+        <input type="radio" value="Not Good" formControlName="feedback">
+    </label>
+    </div>
+    <br>
+    <label>
+        Comment:
+        <input type="textarea" formControlName="comment">
+    </label>
+    <br>
+    <button type="submit">Submit</button>
+    
+</form>
+<h3 class="abcd">{{msg}}</h3>
+</body>

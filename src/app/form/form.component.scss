@@ -1,0 +1,113 @@
+body {
+    border: 1px solid black;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+  }
+  
+  label {
+    padding: 0.5em 1em;
+    display: block;
+    width: 10em;
+    margin: 0em 0;
+    color: black;
+    font-weight: bold;
+  }
+  p {
+    display: block;
+    width: 10em;
+    margin: 0em 0;
+    color: black;
+    font-weight: bold;  
+  }
+  .ab {
+    padding: 0em 1em;
+    display: block;
+    width: 10em;
+    margin: 0em 0em;
+    color: #02063f;
+  }
+  .abc {
+    padding: 0em 2em;
+    display: block;
+    width: 10em;
+    margin: 0em 0;
+    color: #0a0236;
+  }
+
+  .abcd {
+    padding: 0em 1em;
+    display: block;
+    margin: 1em 1;
+  }
+  
+  /*
+  @mixin input {
+  display: inline-block;
+  color: #8eb2e7;
+	padding: .5em 2em .55em;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	@include rounded('.5em');
+	//this determines Mozilla to show the padding
+	border: solid 1px #ccc;
+	@include shadow;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}*/
+input {
+  background: linear-gradient(-45deg, #e4b1ae , #e4c5a9, #a7ccda, #bae7dd);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+  }
+}
+  color: black;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+@mixin color($background) {
+	border: solid 1px darken($background, 3%);
+	@include gradient(lighten($background, 13%), $background);
+  	color: mix(#fff, $background, 90%);
+	&:hover {
+		@include gradient(lighten($background, 10%), darken($background, 5%))
+	}
+	&:active {
+		@include gradient($background, lighten($background, 10%));
+		color: mix(#fff, $background, 70%);
+	}
+}
+
+button {
+    margin-left: 20px;
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }
+  
